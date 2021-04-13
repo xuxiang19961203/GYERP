@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--解决idea thymeleaf 表达式模板报红波浪线-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" th:href="@{/static/favicon.ico}"/>
+    <title>GYerp-发货单查询</title>
+</head>
+<body>
+<form th:action="@{/erp/getDeliverys}" method="get">
+    <table width="435 px" border=1>
+        <tr>
+            <td>appkey:</td>
+            <td><input type="text" name="appkey" value="122310" style="width: 200px;height:15px;"><br/></td>
+        </tr>
+        <tr>
+            <td>sessionkey:</td>
+            <td><input type="text" name="sessionkey" value="97d7356ea59c409c86af4ab6a49dc335" style="width: 200px;height:15px;"><br/></td>
+        </tr>
+        <tr>
+            <td>secret:</td>
+            <td><input type="text" name="secret" value="a48f6b8d02e94c56a3b798ede05721e9" style="width: 200px;height:15px;"><br/></td>
+        </tr>
+        <tr>
+            <td>method:</td>
+            <td><input type="text" name="method" value="gy.erp.trade.deliverys.get" style="width: 200px;height:15px;"><br/></td>
+        </tr>
+        <tr>
+            <td>页码</td>
+            <td><input type="text" name="page_no" value="1" style="width: 200px;height:15px;"><br/></td>
+        </tr>
+        <tr>
+            <td>页码大小</td>
+            <td><input type="text" name="page_size" value="10" style="width: 200px;height:15px;"><br/></td>
+        </tr>
+        <tr>
+            <td>创建时间开始段</td>
+            <td><input type="text" name="start_create" value="" style="width: 200px;height:15px;"><br/></td>
+        </tr>
+        <tr>
+            <td>创建时间结束段</td>
+            <td><input type="text" name="end_create" value="" style="width: 200px;height:15px;"><br/></td>
+        </tr>
+        <tr>
+            <td>发货时间开始段</td>
+            <td><input type="text" name="start_delivery_date" value="2021-04-05 19:11:37" style="width: 200px;height:15px;"><br/></td>
+        </tr>
+        <tr>
+            <td>发货时间结束段</td>
+            <td><input type="text" name="end_delivery_date" value="2021-04-11 19:11:37" style="width: 200px;height:15px;"><br/></td>
+        </tr>
+        <tr>
+            <td>修改时间开始段</td>
+            <td><input type="text" name="start_modify_date" value="" style="width: 200px;height:15px;"><br/></td>
+        </tr>
+        <tr>
+            <td>修改时间结束段</td>
+            <td><input type="text" name="end_modify_date" value="" style="width: 200px;height:15px;"><br/></td>
+        </tr>
+        <tr>
+            <td>是否同时返回已作废的单据</td>
+            <td><select name="del" style="width: 208px;height:22px;">
+                <option value="" selected="selected"></option>
+                <option value="0">0:不返回已作废的单据</option>
+                <option value="1">1:返回已作废的单据</option>
+            </select><br/></td>
+        </tr>
+        <tr>
+            <td>单据编号</td>
+            <td><input type="text" name="code" value="" style="width: 200px;height:15px;"><br/></td>
+        </tr>
+        <tr>
+            <td>仓库代码</td>
+            <td><input type="text" name="warehouse_code" value="" style="width: 200px;height:15px;"><br/></td>
+        </tr>
+        <tr>
+            <td>店铺代码</td>
+            <td><input type="text" name="shop_code" value="" style="width: 200px;height:15px;"><br/></td>
+        </tr>
+        <tr>
+            <td>平台单号</td>
+            <td><input type="text" name="outer_code" value="" style="width: 200px;height:15px;"><br/></td>
+        </tr>
+        <tr>
+            <td>打印状态</td>
+            <td><select name="print" style="width: 208px;height:22px;">
+                <option value="" selected="selected"></option>
+                <option value="0">0:未打印</option>
+                <option value="1">1:打印</option>
+            </select><br/></td>
+        </tr>
+        <tr>
+            <td>扫描状态</td>
+            <td><input type="text" name="scan" value="" style="width: 200px;height:15px;"><br/></td>
+        </tr>
+        <tr>
+            <td>发货状态</td>
+            <td><select name="delivery" style="width: 208px;height:22px;">
+                <option value="1" selected="selected">1:发货成功</option>
+                <option value="0">0:未发货、发货中、发货失败</option>
+            </select><br/></td>
+        </tr>
+        <tr>
+            <td>货到付款状态</td>
+            <td><input type="text" name="cod" value="" style="width: 200px;height:15px;"><br/></td>
+        </tr>
+        <tr>
+            <td>会员名称</td>
+            <td><input type="text" name="vip_name" value="" style="width: 200px;height:15px;"><br/></td>
+        </tr>
+        <tr>
+            <td>是否外仓单据</td>
+            <td><select name="wms" style="width: 208px;height:22px;">
+                <option value="" selected="selected"></option>
+                <option value="1">1:是</option>
+                <option value="0">0:不是</option>
+            </select><br/></td>
+        </tr>
+        <tr>
+            <td>物流单号</td>
+            <td><input type="text" name="mail_no" value="" style="width: 200px;height:15px;"><br/></td>
+        </tr>
+        <tr>
+            <td>数据同步状态</td>
+            <td><select name="sync_status" style="width: 208px;height:22px;">
+                <option value="" selected="selected"></option>
+                <option value="1">1:已同步</option>
+                <option value="0">0:未同步</option>
+                <option value="-1">-1:同步失败</option>
+            </select><br/></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="查询" width="50px" style="outline-color: white"><br/></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--解决idea thymeleaf 表达式模板报红波浪线-->
+<!--suppress ALL -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="shortcut icon" th:href="@{/static/favicon.ico}"/>
+	<title>GYerp-店铺查询</title>
+</head>
+<body>
+
+<form th:action="@{/erp/getShops}" method="get">
+	appkey:<input type="text"  name="appkey" value="157516"><br/>
+	sessionkey:<input type="text"  name="sessionkey" value="f6acc7ce597d4d07999bdbf8acef2d03"><br/>
+	secret:<input type="text"  name="secret" value="6de56616f8aa4c56ba49109bd55e3b61"><br/>
+	method:<input type="text"  name="method" value="gy.erp.shop.get"><br/>
+	page_no:<input type="text"  name="page_no" value="1"><br/>
+	page_size:<input type="text"  name="page_size" value="10"><br/>
+	modify_start_date:<input type="text"  name="modify_start_date" value=""><br/>
+	modify_end_date:<input type="text"  name="modify_end_date" value=""><br/>
+	code:<input type="text"  name="code" value=""><br/>
+	<input type="submit" value="查询">
+</form>
+</body>
+</html>

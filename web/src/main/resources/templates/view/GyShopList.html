@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--解决idea thymeleaf 表达式模板报红波浪线-->
+<!--suppress ALL -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>店铺列表</title>
+	<link rel="shortcut icon" th:href="@{/static/favicon.ico}"/>
+</head>
+<body>
+
+<form action="#" method="post">
+
+	<table width="100%" border=1>
+		<tr>
+			<td>id</td>
+			<td>nick</td>
+			<td>code</td>
+			<td>name</td>
+			<td>create_date</td>
+			<td>modify_date</td>
+			<td>note</td>
+			<td>type_name</td>
+			<td>操作</td>
+		</tr>
+		<!--
+　　　　each
+　　　　其中，iterStat参数为状态变量，常用的属性有
+　　　　index 迭代下标，从0开始
+　　　　count 迭代下标，从1开始
+　　　　size 迭代元素的总量
+　　　　current 当前元素
+　　 -->
+			<tr th:if="${GYShopVo!=null}"
+				th:each="shops,iterStat : ${GYShopVo?.shops }">
+				<td><div th:text="${shops.id}"></div></td>
+				<td><div th:text="${shops.nick}"></div></td>
+				<td><div th:text="${shops.code}"></div></td>
+				<td><div th:text="${shops.name}"></div></td>
+				<td><div th:text="${shops.create_date}"></div></td>
+				<td><div th:text="${shops.modify_date}"></div></td>
+				<td><div th:text="${shops.note}"></div></td>
+				<td><div th:text="${shops.type_name}"></div></td>
+				<td><a href="#">修改</a>
+					<a href="#">删除</a>
+				</td>
+			</tr>
+	</table>
+<!--	<div th:text="共${GYShopVo.total}条数据"></div>-->
+</form>
+</body>
+</html>

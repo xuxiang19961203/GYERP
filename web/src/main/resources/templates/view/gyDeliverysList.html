@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--解决idea thymeleaf 表达式模板报红波浪线-->
+<!--suppress ALL -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>gyDeliverysList</title>
+    <link rel="shortcut icon" th:href="@{/static/favicon.ico}"/>
+</head>
+<body>
+<table width="100%" border=1>
+    <tr>
+        <td>create_date</td>
+        <td>code</td>
+        <td>receiver_name</td>
+        <td>receiver_mobile</td>
+        <td>shop_name</td>
+        <td>warehouse_name</td>
+        <td>warehouse_name</td>
+        <td>express_code</td>
+        <td>操作</td>
+    </tr>
+    <tr th:each="gydeliverys,iterStat:${gyDeliverysVO.deliverys}">
+        <td th:text="${#dates.format(gydeliverys.create_date,'yyyy-MM-dd HH:mm:ss')}"></td>
+        <td th:text="${gydeliverys.code}"></td>
+        <td th:text="${gydeliverys.receiver_name}"></td>
+        <td th:text="${gydeliverys.receiver_mobile}"></td>
+        <td th:text="${gydeliverys.shop_name}"></td>
+        <td th:text="${gydeliverys.warehouse_name}"></td>
+        <td th:text="${gydeliverys.warehouse_name}"></td>
+        <td th:text="${gydeliverys.express_code}"></td>
+        <td><a href="#">详情</a></td>
+    </tr>
+</table>
+</body>
+</html>
