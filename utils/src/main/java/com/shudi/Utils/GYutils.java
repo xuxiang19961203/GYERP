@@ -36,7 +36,8 @@ public class GYutils {
         log.info("data=" + data);
         //转换成MD5(32位大写加密)
         String sign = DigestUtils.md5DigestAsHex(data.getBytes()).toUpperCase();
-        log.info("sign=" + sign);
+        log.info("最终签名sign=" + sign);
+        //String sign2 = DigestUtil.md5Hex(data).toUpperCase(); //使用此方法加密效果一样
         //JSONObject jsonObject = JSON.parseObject(shopJsonString);//无需排列会导致请求失败
         //将javabean转换成jsonObject对象,对象属性按照JSON属性排列,然后再json尾部添加sign参数
         JSONObject jsonObject = JSON.parseObject(shopJsonString, Feature.OrderedField);

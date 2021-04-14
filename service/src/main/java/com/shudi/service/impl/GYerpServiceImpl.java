@@ -59,6 +59,14 @@ public class GYerpServiceImpl implements GYerpService {
         return gyDeliverysVO;
     }
 
+    //新增管易<其他入库单>
+    @Override
+    public JSONObject addStockOtherIn(String finalJson, String url) throws DataAccessException {
+        JSONObject jsonObject = RestTemplateUtils.getJSONObject(finalJson, url);
+        return jsonObject;
+    }
+
+    //数据存入数据库
     public void addGYDeliverys(GYDeliverysVO gyDeliverysVO) {
         if (gyDeliverysVO.getTotal() > 0) {
             //如果主表存在,则存储主表数据

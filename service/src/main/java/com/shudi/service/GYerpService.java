@@ -1,5 +1,6 @@
 package com.shudi.service;
 
+import com.alibaba.fastjson.JSONObject;
 import com.shudi.pojo.deliverys.GYDeliverysVO;
 import com.shudi.pojo.shop.GYShopVo;
 
@@ -16,4 +17,7 @@ public interface GYerpService {
     GYShopVo getShops(String shopJson,String url, Class<GYShopVo> gyShopVoClass);
 
     GYDeliverysVO getGYDeliverys(String deliverysJson, String url,  Class<GYDeliverysVO> gyDeliverysVOClass);
+
+
+    JSONObject addStockOtherIn(String finalJson, String url);
 }
